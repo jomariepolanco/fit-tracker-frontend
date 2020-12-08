@@ -10,48 +10,158 @@
 <body>
     <header>
         <h1>Fit Tracker</h1>
-        <br>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Daily Intentions</a></li>
-            <li><a href="#">Workout Schedule</a></li>
-            <li><a href="#">Meals</a></li>
             <li><a href="#">Tracking</a></li>
+            <li><a href="#">Meals</a></li>
+            <li><a href="#">Workout Schedule</a></li>
+            <li><a href="#">Daily Intentions</a></li>
+            <li><a href="#">Home</a></li>
         </ul>
     </header>
 
     <main>
-        <div class="home-page-container">
-            <div class="intentions card">
-                <div class="intentions-info">
-                    <h1>Daily Intentions</h1>
-                    <h3>Date</h3>
-                    <span>Sleep</span>
-                    <span>Nutrition</span>
-                    <span>Hydration</span>
-                    <span>Intentions</span>
-                    <span>Reflections</span>
+        <!-- <div class="home-page-container"> -->
+                <div class="intentions card">
+                    <div class="intentions-info">
+                        <h1>Daily Intentions</h1>
+                        <h3>Date</h3>
+                        <p>Sleep</p>
+                        <p>Nutrition</p>
+                        <p>Hydration</p>
+                        <p>Intentions</p>
+                        <p>Reflections</p>
+                    </div>
+                </div>
+                <div class="motivation card">
+                    <h1>MOTIVATIONAL QUOTE</h1>
+                </div>
+                <br>
+                <div class="workouts card">
+                    <div class="workouts-info">
+                        <h1>Today's Workout:</h1>
+                        <p>30 seconds on, 10 seconds transition time to move between exercises. 60 seconds rest after each set.</p>
+                        <div class="workout-flex-box">
+                            <div class="individual-workout">
+                                <h3>Activation Circuit</h3>
+                                <div class="workout-card">
+                                    <div>A1 Banded Hip Thrusts</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                    <div>Banded Seated Abductors</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                </div>
+                            </div>
+    
+                            <div class="individual-workout">
+                                <h3>Main Exercise</h3>
+                                <div class="workout-card">
+                                    <div>A1 Banded Hip Thrusts</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                    <div>Banded Seated Abductors</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                </div>
+                                <div class="workout-card">
+                                    <div>A1 Banded Hip Thrusts</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                    <div>Banded Seated Abductors</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                </div>
+                            </div>
+
+                            <div class="individual-workout">
+                                <h3>Finisher</h3>
+                                <div class="workout-card">
+                                    <div>A1 Banded Hip Thrusts</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                    <div>Banded Seated Abductors</div>
+                                    <sup>2 rounds, 30 seconds</sup>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="meals card">
+                    <h1>Today's Meals</h1>
+                    <div class="individual-meals">
+                        <div class="meals-info">
+                            <h3>Breakfast</h3>
+                            <div class="meal-card">
+                                <h4>Protein Oats</h4>
+                                <p>50g rolled Oats<br>
+                                    20g almond butter<br>
+                                    50 g blueberries<Br>
+                                    250 ml milk<br>
+                                    45 g protein powder
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="meals-info">
+                            <h3>Lunch</h3>
+                            <div class="meal-card">
+                                <h4>Protein Oats</h4>
+                                <p>50g rolled Oats<br>
+                                    20g almond butter<br>
+                                    50 g blueberries<Br>
+                                    250 ml milk<br>
+                                    45 g protein powder
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                        <br>
+                    <div class="individual-meals">
+                        <div class="meals-info">
+                            <h3>Dinner</h3>
+                            <div class="meal-card">
+                                <h4>Protein Oats</h4>
+                                <p>50g rolled Oats<br>
+                                    20g almond butter<br>
+                                    50 g blueberries<Br>
+                                    250 ml milk<br>
+                                    45 g protein powder
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="meals-info">
+                            <h3>Snacks</h3>
+                            <div class="meal-card">
+                                <h4>Protein Oats</h4>
+                                <p>50g rolled Oats<br>
+                                    20g almond butter<br>
+                                    50 g blueberries<Br>
+                                    250 ml milk<br>
+                                    45 g protein powder
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                        <br>
+                    </div>
+                </div>
+    
+                <div class="tracking card">
+                    <div class="tracking-info">
+                        <h1> Track Progress</h1>
+                        <form id="tracking-form">
+                            <input type="text" name="weight" placeholder="Weight">
+                            <input type="text" name="chest" placeholder="Chest"><br>
+                            <input type="text" name="hips" placeholder="Hips">
+                            <input type="text" name="thighs" placeholder="Thighs"><br>
+                            <input type="text" name="waist" placeholder="Waist">
+                            <input type="text" name="arm" placeholder="Arm"><br>
+                            <select name="week" placeholder="Pick Week:">
+                                <option value="week1">Week 1</option>
+                                <!-- All weeks here -->
+                            </select><br>
+                            <input type="submit" name="submit" value="Submit">
+                        </form>
+                    </div>
                 </div>
             </div>
-
-            <div class="workouts card">
-                <div class="workouts-info">
-
-                </div>
-            </div>
-
-            <div class="meals card">
-                <div class="meals-info">
-
-                </div>
-            </div>
-
-            <div class="tracking card">
-                <div class="tracking-info">
-
-                </div>
-            </div>
-        </div>
+        <!-- </div> -->
     </main>
 </body>
 </html>

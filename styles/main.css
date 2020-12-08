@@ -61,6 +61,7 @@ main {
 .card {
     background-color: rgb(254, 217, 217);
     box-shadow: 10px 10px 5px grey;
+    border-radius: 25px;
     /* display: inline-block; */
     /* padding: 10px; */
     /* margin: 15px 20px; */
@@ -73,6 +74,7 @@ main {
 
 .intentions h1, h3 {
     display: inline;
+    letter-spacing: 2px;
     /* padding-top: 15px; */
 }
 
@@ -90,11 +92,13 @@ main {
     grid-area: 1 / 4 / 3 / 7;
     text-align: center;
     padding-top: 8%;
+    letter-spacing: 2px;
 }
 
 .workouts {
     grid-area: 3 / 1 / 5 / 7;
     padding: 15px 15px;
+    letter-spacing: 2px;
 }
 
 .workout-flex-box {
@@ -111,6 +115,7 @@ main {
 
 .individual-workout h3 {
     display: block;
+    letter-spacing: 2px;
 }
 
 .individual-workout .workout-card{
@@ -121,6 +126,7 @@ main {
 .meals {
     grid-area: 5 / 1 / 8 / 4;
     padding: 5px 5px;
+    letter-spacing: 2px;
 }
 
 .individual-meals {
@@ -143,6 +149,7 @@ main {
 .tracking {
     grid-area: 5 / 4 / 8 / 7;  
     padding: 15px 15px;
+    letter-spacing: 2px;
 }
 
 #tracking-form {

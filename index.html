@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fit Tracker</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <script src="./src/TrackingComponent.js"></script>
+    <script src="./src/MealComponent.js"></script>
+    <script src="./src/WorkoutComponent.js"></script>
+    <script src="./src/GoalComponent.js"></script>
     <script src="./src/index.js" defer></script>
 </head>
 <body>
@@ -21,6 +25,26 @@
 
     <main>
         <!-- <div class="home-page-container"> -->
+            <div id="modal" style="display: none;" data-action="close">
+                <form id="intentions-form">
+                  <h1>Set Daily Intentions</h1>
+                  <label for="sleep">Sleep</label>
+                  <input type="text" name="sleep">
+                  <label for="nutrition">Nutrition</label>
+                  <input type="text" name="nutrition">          
+                  <label for="hydration">Hydration</label>
+                  <input type="text" name="hydration">
+                  <label for="steps">Steps</label>
+                  <input type="text" name="steps">
+                  <label for="intentions">Intetions</label>
+                  <input type="text" name="intentions">
+                  <label for="reflections">Reflections</label>
+                  <input type="text" name="reflections">
+                  <label for="day_id">Day</label>
+                  <input type="text" name="day">
+                  <input type="submit" value="Submit">
+                </form>
+              </div>
                 <div class="intentions card">
                     <div class="intentions-info">
                         <h1>Daily Intentions</h1>
@@ -154,7 +178,7 @@
                             <input type="text" name="waist" placeholder="Waist">
                             <input type="text" name="arm" placeholder="Arm"><br>
                             <select name="week" placeholder="Pick Week:">
-                                <option value="week1">Week 1</option>
+                                <option name ="week" value="3">Week 1</option>
                                 <!-- All weeks here -->
                             </select><br>
                             <input type="submit" name="submit" value="Submit">

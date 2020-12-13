@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit Tracker</title>
-    <link rel="stylesheet" href="./styles/main.css">
-    <script src="./src/index.js" defer></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fit Tracker</title>
+        <link rel="stylesheet" href="./styles/main.css" />
+        <script src="./src/index.js" defer></script>
 </head>
 <body>
     <header>
@@ -32,32 +32,30 @@
                 </div>
                 <br>
                 <div class="motivation card">
-                    <h1>MOTIVATIONAL QUOTE</h1>
-                    <p>author</p>
+                    <h1></h1>
+                    <p></p>
                 </div>
                 <br>
                 <div class="workouts card">
-                    <div class="workouts-info">
-                        <!-- calendar here -->
+                    <div id="calendar">
+                        
                     </div>
                 </div>
                 <br>
                 <div class="stats card">
-                    <!-- View Stats -->
+                        <!-- View Stats -->
                 </div>
                     
                 <div class="stats-form card">
-                    <div class="tracking-info">
-                        <h1> Track Progress</h1>
-                        <form id="tracking-form">
-                            <input type="text" name="weight" placeholder="Weight">
-                            <input type="text" name="chest" placeholder="Chest"><br>
+                    <div class="stats-form-info">
+                        <h1> Create a New Stat</h1>
+                        <form id="stats-form">
+                            <input type="text" name="user" placeholder="user">
+                            <select name="exercise" placeholder="exercise">
+                                <option name ="week" value="3">Week 1</option>
+                            <input type="text" name="weight" placeholder="weight"><br>
                             <input type="text" name="hips" placeholder="Hips">
                             <input type="text" name="thighs" placeholder="Thighs"><br>
-                            <input type="text" name="waist" placeholder="Waist">
-                            <input type="text" name="arm" placeholder="Arm"><br>
-                            <select name="week" placeholder="Pick Week:">
-                                <option name ="week" value="3">Week 1</option>
                                 <!-- All weeks here -->
                             </select><br>
                             <input type="submit" name="submit" value="Submit">
@@ -67,7 +65,5 @@
             </div>
         <!-- </div> -->
     </main>
-
-    <div id="workout-"
 </body>
 </html>

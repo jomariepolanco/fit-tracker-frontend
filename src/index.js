@@ -6,7 +6,8 @@ const main = document.querySelector("main")
 const loginForm = document.querySelector('#login')
 const motivation = document.querySelector(".motivation")
 const userCard = document.querySelector(".user")
-
+const statsCard = document.querySelector(".stats")
+const workoutCalendar = document.querySelector(".workouts")
 /**** EVENT LISTENERS/HANDLERS ****/
 
 /**** FETCHES ****/
@@ -17,6 +18,17 @@ const setUser = (username, password) => {
     .then(usersObj => renderMain(usersObj, username, password))
 }
 
+const fetchStats = () => {
+    fetch(`${URL}/stats`)
+    .then(r => r.json())
+    .then(statsData => renderStats(statsData))
+}
+
+const fetchWorkoutAppointments = () => {
+    fetch(`${URL}/appointments`)
+    .then(r => r.json())
+    .then(appointments => renderWorkoutCalendar(appointments))
+}
 /**** RENDER FUNCTIONS ****/
 
 const logIn = () => {
@@ -32,11 +44,12 @@ const logIn = () => {
 const renderMain = (users, username, password) => {
     main.style.display = ""
     user = users.find(user => user.username === username && user.password === password)
-    renderUserInfo()
     renderMotivationalQuote()
-    renderStats()
+    renderUserInfo()
+    fetchStats()
+    fetchWorkoutAppointments()
     renderStatsForm()
-    renderWorkoutCalendar()
+    loginForm.style.display = "none"
 }
 
 const renderUserInfo = () => {
@@ -65,16 +78,37 @@ const renderMotivationalQuote = () => {
     })
 }
 
-const renderStats = () => {
-    console.log("view stats")
+const renderStats = (statsData) => {
+    const stats = statsData.filter(stats => stats.user=== user.username)
+    stats.forEach(stat => {
+        const div = document.createElement("div")
+        div.className = "stats-info"
+        const nameAndWeight = document.createElement("h3")
+        nameAndWeight.textContent = `${stat.exercise}/${stat.weight} lbs`
+        const comment = document.createElement("p")
+        comment.textContent = stat.comment
+        div.append(nameAndWeight, comment)
+        statsCard.append(div)
+    })
+    console.log(stats)
 }
 
 const renderStatsForm = () => {
     console.log("stats form")
 }
 
-const renderWorkoutCalendar = () => {
-    console.log("workouts")
+const renderWorkoutCalendar = (appointments) => {
+    const h1 = document.createElement("h1")
+    h1.textContent = `${user.name}'s Workouts`
+    const workouts = appointments.filter(app => app.user === user.username)
+    workouts.forEach(workout => {
+        const h3 = document.createElement("h3")
+        h3.textContent = workout.workout 
+        const p = document.createElement("p")
+        p.textContent = `${workout.date} at ${workout.time} in ${workout.location}`
+        workoutCalendar.append(h3, p)
+    })
+    workoutCalendar.prepend(h1)
 }
 
 /**** INITIALIZE ****/

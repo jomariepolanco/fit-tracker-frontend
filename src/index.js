@@ -5,6 +5,7 @@ let user = {}
 const main = document.querySelector("main")
 const loginForm = document.querySelector('#login')
 const motivation = document.querySelector(".motivation")
+const userCard = document.querySelector(".user")
 
 /**** EVENT LISTENERS/HANDLERS ****/
 
@@ -39,7 +40,17 @@ const renderMain = (users, username, password) => {
 }
 
 const renderUserInfo = () => {
-    console.log("userInfo")
+    const name = document.createElement("h1")
+    name.textContent = user.name
+    const age = document.createElement("h4")
+    age.textContent = `${user.age} years old`
+    const height = document.createElement("h4")
+    height.textContent = `${user.height} inches tall` 
+    const weight = document.createElement("h4")
+    weight.textContent = `${user.weight} pounds`
+    const username = document.createElement("p")
+    username.innerHTML = `<em>${user.username}</em>` 
+    userCard.append(name, username, age, height, weight)
 }
 
 const renderMotivationalQuote = () => {

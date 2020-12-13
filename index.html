@@ -5,57 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fit Tracker</title>
     <link rel="stylesheet" href="./styles/main.css">
-    <script src="./src/TrackingComponent.js"></script>
-    <script src="./src/MealComponent.js"></script>
-    <script src="./src/WorkoutComponent.js"></script>
-    <script src="./src/GoalComponent.js"></script>
     <script src="./src/index.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Fit Tracker</h1>
         <ul>
-            <li><a href="#">Tracking</a></li>
-            <li><a href="#">Meals</a></li>
-            <li><a href="#">Workout Schedule</a></li>
-            <li><a href="#">Daily Intentions</a></li>
+            <!-- <li><a href="#">Tracking</a></li>
+            <li><a href="#">Meals</a></li> -->
+            <li><a href="#">Create a Workout</a></li>
+            <li><a href="#">Exercises</a></li>
+            <li><a href="#">Workouts</a></li>
             <li><a href="./index.html">Home</a></li>
         </ul>
     </header>
 
+    <form id="login">
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password" placeholder="password">
+        <button type="submit">Log In</button>
+    </form>
     <main>
         <!-- <div class="home-page-container"> -->
-            <div id="modal" style="display: none;" data-action="close">
-                <form id="intentions-form">
-                  <h1>Set Daily Intentions</h1>
-                  <label for="sleep">Sleep</label>
-                  <input type="text" name="sleep">
-                  <label for="nutrition">Nutrition</label>
-                  <input type="text" name="nutrition">          
-                  <label for="hydration">Hydration</label>
-                  <input type="text" name="hydration">
-                  <label for="steps">Steps</label>
-                  <input type="text" name="steps">
-                  <label for="intentions">Intetions</label>
-                  <input type="text" name="intentions">
-                  <label for="reflections">Reflections</label>
-                  <input type="text" name="reflections">
-                  <label for="day_id">Day</label>
-                  <input type="text" name="day">
-                  <input type="submit" value="Submit">
-                </form>
-              </div>
-                <div class="intentions card">
-                    <div class="intentions-info">
-                        <h1>Daily Intentions</h1>
-                        <h3>Date</h3>
-                        <p class="sleep">Sleep</p>
-                        <p class="nutrition">Nutrition</p>
-                        <p class="hydration">Hydration</p>
-                        <p class="intention">Intentions</p>
-                        <p class="reflections">Reflections</p>
-                    </div>
+                <div class="user card">
+                    <!-- User Profile info -->
                 </div>
+                <br>
                 <div class="motivation card">
                     <h1>MOTIVATIONAL QUOTE</h1>
                     <p>author</p>
@@ -63,111 +38,15 @@
                 <br>
                 <div class="workouts card">
                     <div class="workouts-info">
-                        <h1>Today's Workout:</h1>
-                        <p>30 seconds on, 10 seconds transition time to move between exercises. 60 seconds rest after each set.</p>
-                        <div class="workout-flex-box">
-                            <div class="individual-workout">
-                                <h3>Activation Circuit</h3>
-                                <div class="workout-card">
-                                    <div>A1 Banded Hip Thrusts</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                    <div>Banded Seated Abductors</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                </div>
-                            </div>
-    
-                            <div class="individual-workout">
-                                <h3>Main Exercise</h3>
-                                <div class="workout-card">
-                                    <div>A1 Banded Hip Thrusts</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                    <div>Banded Seated Abductors</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                </div>
-                                <div class="workout-card">
-                                    <div>A1 Banded Hip Thrusts</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                    <div>Banded Seated Abductors</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                </div>
-                            </div>
-
-                            <div class="individual-workout">
-                                <h3>Finisher</h3>
-                                <div class="workout-card">
-                                    <div>A1 Banded Hip Thrusts</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                    <div>Banded Seated Abductors</div>
-                                    <sup>2 rounds, 30 seconds</sup>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- calendar here -->
                     </div>
                 </div>
                 <br>
-                <div class="meals card">
-                    <h1>Today's Meals</h1>
-                    <div class="individual-meals">
-                        <div class="meals-info">
-                            <h3>Breakfast</h3>
-                            <div class="meal-card">
-                                <h4>Protein Oats</h4>
-                                <p>50g rolled Oats<br>
-                                    20g almond butter<br>
-                                    50 g blueberries<Br>
-                                    250 ml milk<br>
-                                    45 g protein powder
-                                </p>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="meals-info">
-                            <h3>Lunch</h3>
-                            <div class="meal-card">
-                                <h4>Protein Oats</h4>
-                                <p>50g rolled Oats<br>
-                                    20g almond butter<br>
-                                    50 g blueberries<Br>
-                                    250 ml milk<br>
-                                    45 g protein powder
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                        <br>
-                    <div class="individual-meals">
-                        <div class="meals-info">
-                            <h3>Dinner</h3>
-                            <div class="meal-card">
-                                <h4>Protein Oats</h4>
-                                <p>50g rolled Oats<br>
-                                    20g almond butter<br>
-                                    50 g blueberries<Br>
-                                    250 ml milk<br>
-                                    45 g protein powder
-                                </p>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="meals-info">
-                            <h3>Snacks</h3>
-                            <div class="meal-card">
-                                <h4>Protein Oats</h4>
-                                <p>50g rolled Oats<br>
-                                    20g almond butter<br>
-                                    50 g blueberries<Br>
-                                    250 ml milk<br>
-                                    45 g protein powder
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                        <br>
-                    </div>
+                <div class="stats card">
+                    <!-- View Stats -->
                 </div>
-    
-                <div class="tracking card">
+                    
+                <div class="stats-form card">
                     <div class="tracking-info">
                         <h1> Track Progress</h1>
                         <form id="tracking-form">
@@ -188,5 +67,7 @@
             </div>
         <!-- </div> -->
     </main>
+
+    <div id="workout-"
 </body>
 </html>

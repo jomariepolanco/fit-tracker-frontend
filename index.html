@@ -25,6 +25,24 @@
         <input type="text" name="password" placeholder="password">
         <button type="submit">Log In</button>
     </form>
+    <div id="workouts-main" style="display: none;">
+        <div class="all-workouts card">
+
+        </div>
+        <div class="my-workouts card">
+
+        </div>
+    </div>
+    <div id="exercises-main" style="display: none;">
+        <div class="all-exercises card">
+            
+        </div>
+    </div>
+    <div class="create-new-workouts card" style="display: none">
+        <form>
+            
+        </form>
+    </div>
     <main>
         <!-- <div class="home-page-container"> -->
                 <div class="user card">
@@ -50,14 +68,9 @@
                     <div class="stats-form-info">
                         <h1> Create a New Stat</h1>
                         <form id="stats-form">
-                            <input type="text" name="user" placeholder="user">
-                            <select name="exercise" placeholder="exercise">
-                                <option name ="week" value="3">Week 1</option>
-                            <input type="text" name="weight" placeholder="weight"><br>
-                            <input type="text" name="hips" placeholder="Hips">
-                            <input type="text" name="thighs" placeholder="Thighs"><br>
-                                <!-- All weeks here -->
-                            </select><br>
+                            <!-- form here -->
+                            <input type="number" name="weight" placeholder="weight"><br>
+                            <input type="text" name="comment" placeholder="comment"><br>
                             <input type="submit" name="submit" value="Submit">
                         </form>
                     </div>

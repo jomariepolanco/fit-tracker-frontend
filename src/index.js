@@ -15,9 +15,29 @@ const allWo = document.querySelector(".all-workouts")
 const myWorkouts = document.querySelector(".my-workouts")
 const allExercises = document.querySelector(".all-exercises")
 const exerciseMain = document.querySelector("#exercises-main")
-const workoutForm = document.querySelector(".create-new-workouts")
+
+// const workoutForm = document.querySelector(".create-new-workouts")
 
 /**** EVENT LISTENERS/HANDLERS ****/
+workoutCalendar.addEventListener("click", event => {
+    if (event.target.tagName === "BUTTON"){
+        // debugger
+        const id = event.target.previousElementSibling.previousElementSibling.dataset.id
+        fetch(`${URL}/workouts/${id}`, {
+            method: "DELETE",
+            headers: {"Content-Type": "application/json"}
+        })
+        .then(r => r.json())
+        .then(()=> {
+            event.target.remove()
+            event.target.previousElementSibling.remove()
+            event.target.previousElementSibling.previousElementSibling.remove()
+        })
+        
+        //DELETE
+    }
+})
+
 header.addEventListener("click", event => {
     if (event.target.tagName === "A"){
         if (event.target.textContent === "Workouts"){
@@ -30,12 +50,13 @@ header.addEventListener("click", event => {
             main.style.display = "none"
             workoutsMain.style.display = "none"
             renderExercisesPage()
-        } else if (event.target.textContent === "Create a Workout"){
-            exerciseMain.style.display = "none"
-            main.style.display = "none"
-            workoutsMain.style.display = "none"
-            workoutForm.style.display = ""
-        }
+        } 
+        // else if (event.target.textContent === "Create a Workout"){
+        //     exerciseMain.style.display = "none"
+        //     main.style.display = "none"
+        //     workoutsMain.style.display = "none"
+        //     workoutForm.style.display = ""
+        // }
     }
 })
 
@@ -119,6 +140,7 @@ renderWorkout = (workout) => {
     const div = document.createElement("div")
     div.className = workout.kind
     const h3 = document.createElement("h3")
+    h3.dataset.id = workout.id
     h3.textContent = workout.kind 
     const p = document.createElement("p")
     p.textContent = workout.exercises.map(ex => `${ex.name}`).join(", ")
@@ -215,6 +237,7 @@ const renderStatsForm = (exercises) => {
         option.value = exercise.id 
         option.textContent = exercise.name 
         xDropDown.append(option)
+        // workoutForm.querySelector("select").append(option) 
     })
 
     statsForm.prepend(xDropDown)
@@ -226,13 +249,33 @@ const renderWorkoutCalendar = (appointments) => {
     const workouts = appointments.filter(app => app.user === user.username)
     workouts.forEach(workout => {
         const h3 = document.createElement("h3")
+        h3.dataset.id = workout.workout_id 
         h3.textContent = workout.workout 
         const p = document.createElement("p")
-        p.textContent = `${workout.date} at ${workout.time} in ${workout.location}`
-        workoutCalendar.append(h3, p)
+        p.textContent = `${convertDate(workout.date)} at ${convertTime(workout.time)} in ${workout.location}`
+        const button = document.createElement("button")
+        button.textContent = "Delete Workout"
+        workoutCalendar.append(h3, p, button)
     })
     workoutCalendar.prepend(h1)
 }
 
+
+/****  HELPER FUNCTIONS ****/
+const convertTime = (time) => {
+    const newTime = new Date(time)
+    const hours = newTime.getHours()
+    let minutes = newTime.getMinutes()
+
+    if (minutes.toString().length === 1){
+        minutes = `${minutes}0`
+    }
+    return `${hours}:${minutes}`
+}
+
+const convertDate = (date) => {
+    const newD = date.split("-")
+    return `${newD[1]}/${newD[2]}/${newD[0]}`
+}
 /**** INITIALIZE ****/
 logIn()

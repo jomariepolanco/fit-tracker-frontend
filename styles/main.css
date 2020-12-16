@@ -68,6 +68,7 @@ main {
 .user {
     grid-area: 1 / 1 / 3 / 3;
     padding: 15px 15px;
+    text-align: center;
 }
 
 
@@ -79,7 +80,7 @@ main {
 }
 
 .workouts {
-    grid-area: 3 / 3 / 8 / 7;
+    grid-area: 3 / 1 / 6 / 3;
     padding: 15px 15px;
     letter-spacing: 2px;
 }
@@ -107,9 +108,11 @@ main {
     display: inline-block;
 }
 .stats {
-    grid-area: 3 / 1 / 6 / 3;
+    grid-area: 3 / 3 / 8 / 7;
     padding: 5px 5px;
     letter-spacing: 2px;
+    text-align: center;
+    align-items: center;
 }
 
 
@@ -117,6 +120,13 @@ main {
     grid-area: 6 / 1 / 8 / 3;  
     padding: 15px 15px;
     letter-spacing: 2px;
+}
+
+.stats-form input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #workouts-main {
